@@ -1,0 +1,56 @@
+
+
+
+.countries{
+    /* display:inline; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+    text-align: center;
+    width: 250px;
+    height: auto;
+border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.flags {
+
+    padding-top: 20px;
+height: auto;
+    max-width:  150px;
+    /* background: cover no-repeat 50% 50%; */
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.flags:hover{
+    transform: scale(1.1);
+}
+/* .countries:hover{
+    /* background-position: 0 -40px; */
+    /* box-shadow: 0 0 20px rgba(252, 0, 0, 0.5); */
+/* }  */
+
+.country{
+    padding-top: 10px;
+}
+.text{
+    /* display: table-cell;
+    vertical-align: bottom; */
+    display: flex;
+    align-items: flex-end;
+    /* align-items: center; */
+    text-decoration: none;
+    padding-bottom: 10px;
+}
+
+a{
+text-decoration:none;
+color: black;
+font-weight: 500;
+}
+
+li {
+    list-style-type: none;
+}

@@ -3,15 +3,20 @@ import CountryList from './CountryList';
 import axios from 'axios';
 
 
-const UseApi = () => {
-    const BASE = 'https://restcountries.com/v2/all'
-    const [countries, setCoutries] = useState('')
+const useApi = () => {
+    const NAME = `a`
+    const NAMEZ = `z`
+    const [countries, setCoutries] = useState([])
+
+    const BASE = `https://restcountries.com/v3.1/name/${NAME}`
+
 
 
     const getAllCountries = async () => {
         const result = await axios(
-            `${BASE}`,
+            `${BASE} `,
         );
+        // result.sort((a, b) => a.name.common > b.name.common)
         setCoutries(result.data);
         console.log(result.data)
         // return result.data.results.map(_transformCountries);
@@ -25,16 +30,8 @@ const UseApi = () => {
         getAllCountries()
     }, [])
 
-    // const _transformCountries = (count) => {
-    //     return {
-    //         id: count.id,
-    //         name: count.name,
-    //         flag: count.flag.svg
-    //     }
 
-    // }
-
-    return { getAllCountries }
+    return { countries }
 };
 
-export default UseApi;
+export default useApi;

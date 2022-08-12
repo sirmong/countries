@@ -1,29 +1,46 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CountryItem from './CountryItem';
-import UseApi from './UseApi';
+import Input from './Input'
+import ReactTooltip from 'react-tooltip';
+import useApi from './useApi';
 
-const CountryList = () => {
-    const { getAllCountries } = UseApi()
-    const allContries = Object.keys(getAllCountries).map((key, index) => {
-        return <CountryItem
-            country={getAllCountries[key].name[0]}
+import './CountryList.css'
+const CountryList = ({ filters }) => {
+    const { countries } = useApi()
 
-        // country={getAllCountries.name}
-        // flags={key.flags}
-        // key={index}
-        />
+    const filterCoutries = countries.filter(country => {
+        return country.name.common.toLowerCase().includes(filters.toLowerCase())
     })
-    // const allContries = Object.values({ getAllCountries }).map((key, index) => {
-    //     return <CountryItem
-    //         country={getAllCountries[key].name[0]}
-    //         flags={getAllCountries[key].flags}
-    //         key={index} />
-    // })
+    console.log(filterCoutries)
+    // sort((a, b) => a.name.common.localeCompare(b.name.common))
+    const allContries = filters ? filterCoutries.map((key, index) => {
+
+        return <CountryItem
+            flags={key.flags.svg}
+            country={key.name.common}
+
+            capital={key.capital}
+            population={key.population}
+            region={key.region}
+            languages={key.languages}
+            maps={key.maps.googleMaps}
+            // currencies={key.currencies}
+            // area={key.area}
+            // country={getAllCountries.name}
+
+            key={index + 1}
+        />
+
+    }) : null
+
     console.log(allContries)
+
+
     return (
 
-        <div>
+        <div className='coutrylist'>
             {allContries}
+
         </div>
     );
 };
