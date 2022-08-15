@@ -12,9 +12,15 @@ const CountryList = ({ filters }) => {
         return country.name.common.toLowerCase().includes(filters.toLowerCase())
     })
     console.log(filterCoutries)
+
     // sort((a, b) => a.name.common.localeCompare(b.name.common))
     const allContries = filters ? filterCoutries.map((key, index) => {
+        const languages = Object.keys(key.languages).map((item, i) => {
 
+            return <div key={i}>
+                {key.languages[item]}
+            </div>
+        })
         return <CountryItem
             flags={key.flags.svg}
             country={key.name.common}
@@ -22,7 +28,8 @@ const CountryList = ({ filters }) => {
             capital={key.capital}
             population={key.population}
             region={key.region}
-            languages={key.languages}
+            languages={languages}
+
             maps={key.maps.googleMaps}
             // currencies={key.currencies}
             // area={key.area}
