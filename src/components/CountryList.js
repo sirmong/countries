@@ -13,7 +13,7 @@ const CountryList = ({ filters }) => {
     })
     console.log(filterCoutries)
 
-    // sort((a, b) => a.name.common.localeCompare(b.name.common))
+
     const allContries = filters ? filterCoutries.map((key, index) => {
         const languages = Object.keys(key.languages).map((item, i) => {
 
@@ -29,12 +29,7 @@ const CountryList = ({ filters }) => {
             population={key.population}
             region={key.region}
             languages={languages}
-
             maps={key.maps.googleMaps}
-            // currencies={key.currencies}
-            // area={key.area}
-            // country={getAllCountries.name}
-
             key={index + 1}
         />
 

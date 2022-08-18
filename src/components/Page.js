@@ -12,26 +12,16 @@ import ModalList from './ModalList';
 const Page = ({ allContries, openShow, modalShow, closeShow }) => {
 
     const [filters, setFilters] = useState('')
-    // const { } = useContext(Context);
     const [filterCoutries, setFilterCoutries] = useState('')
 
     const onChangeCountry = (filters) => {
         setFilters(filters)
-
     }
 
     const onChangeFilter = (filterCoutries) => {
         setFilterCoutries(filterCoutries)
-        // console.log(filterCoutries)
     }
 
-
-    // const onChangeCountry = (e) => {
-
-    //     setFilter(e.target.value)
-
-
-    // }
 
     return (
         <div className='page'>
@@ -39,18 +29,11 @@ const Page = ({ allContries, openShow, modalShow, closeShow }) => {
             <Input
                 onChange={onChangeCountry}
                 filters={filters}
-            // onChangeFilter={onChangeFilter}
-            // filterCoutries={filterCoutries}
-            // allContries={allContries}
             />
 
-            {/* <CountryItem
-                filters={filters} /> */}
+
             <CountryList
                 filters={filters}
-            // {/* // onChange={onChangeCountry} */}
-            // {/* // onChangeFilter={onChangeFilter} */}
-            // {/* // filterCoutries={filterCoutries} */}
             />
 
 

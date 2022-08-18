@@ -12,16 +12,10 @@ import './Input.css'
 const Input = ({ onChange, filters }) => {
 
     const { countries } = useApi()
-    // const { filters } = filters()
-
     const [filter, setFilter] = useState('')
     const filterCoutries = countries.filter(country => {
         return country.name.common.toLowerCase().includes(filters.toLowerCase())
     })
-    // console.log(filterCoutries)
-
-
-
 
     const onChangeCountry = (e) => {
         e.preventDefault()
@@ -50,23 +44,16 @@ const Input = ({ onChange, filters }) => {
             <form className='search-form'>
                 <input
                     className='input'
-
                     type='text'
                     placeholder='введите название....'
                     onChange={onChangeCountry}
                     onClick={inputClickHandler}
-
-
                     value={filter}
-
                 />
 
                 <ul className='autocomplete'
-
                     onChange={onChangeCountry}
                 >
-
-
                     {filter && isOpen
                         ? filterCoutries.map((key, index) => {
                             return <li
@@ -75,14 +62,10 @@ const Input = ({ onChange, filters }) => {
                                 key={index}
                             >
                                 {key.name.common}
-
                             </li>
                         }) : null
 
                     }
-
-
-
                 </ul>
 
             </form>

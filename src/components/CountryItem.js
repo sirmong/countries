@@ -49,13 +49,6 @@ function CountryItem({ country, flags, filterCoutries, capital, population, curr
                 </p>
                 <div>
                     Язык: {languages}
-
-                    {/* {Object.values(languages).map((item, i) => {
-                        return <div >
-                            {item}
-                        </div>
-                    })} */}
-
                 </div>
 
             </div>

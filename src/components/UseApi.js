@@ -16,12 +16,9 @@ const useApi = () => {
         const result = await axios(
             `${BASE} `,
         );
-        // result.sort((a, b) => a.name.common > b.name.common)
+
         setCoutries(result.data);
         console.log(result.data)
-        // return result.data.results.map(_transformCountries);
-
-
 
     };
 
