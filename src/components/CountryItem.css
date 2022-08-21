@@ -1,8 +1,4 @@
-
-
-
-.countries{
-
+.countries {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,29 +6,27 @@
     text-align: center;
     width: 250px;
     height: auto;
-border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .flags {
-
     padding-top: 20px;
-height: auto;
-    max-width:  150px;
+    height: auto;
+    max-width: 150px;
 
     background-repeat: no-repeat;
     background-position: 50% 50%;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
-.flags:hover{
+.flags:hover {
     transform: scale(1.1);
 }
 
-.country{
+.country {
     padding-top: 10px;
 }
-.text{
-
+.text {
     display: flex;
     align-items: flex-end;
 
@@ -40,10 +34,10 @@ height: auto;
     padding-bottom: 10px;
 }
 
-a{
-text-decoration:none;
-color: black;
-font-weight: 500;
+a {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
 }
 
 li {

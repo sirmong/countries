@@ -1,34 +1,24 @@
-import React, { useState, useEffect } from 'react';
-import CountryList from './CountryList';
-import axios from 'axios';
-
+import { useState, useEffect } from 'react'
+import axios from 'axios'
 
 const useApi = () => {
-    const NAME = `a`
-    const NAMEZ = `z`
-    const [countries, setCoutries] = useState([])
+  const NAME = `a`
+  const [countries, setCoutries] = useState([])
 
-    const BASE = `https://restcountries.com/v3.1/name/${NAME}`
+  const BASE = `https://restcountries.com/v3.1/name/${NAME}`
 
+  const getAllCountries = async () => {
+    const result = await axios(`${BASE} `)
 
+    setCoutries(result.data)
+    console.log(result.data)
+  }
 
-    const getAllCountries = async () => {
-        const result = await axios(
-            `${BASE} `,
-        );
+  useEffect(() => {
+    getAllCountries()
+  }, [])
 
-        setCoutries(result.data);
-        console.log(result.data)
+  return { countries }
+}
 
-    };
-
-
-    useEffect(() => {
-        getAllCountries()
-    }, [])
-
-
-    return { countries }
-};
-
-export default useApi;
+export default useApi
