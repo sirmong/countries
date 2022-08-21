@@ -1,11 +1,10 @@
-import React, { useState, useId } from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import useApi from './UseApi'
 
 import './Input.css'
 
 function Input({ onChange, filters }) {
-  const id = useId(20);
   const { countries } = useApi()
   const [filter, setFilter] = useState('')
   // eslint-disable-next-line react/prop-types

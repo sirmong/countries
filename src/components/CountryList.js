@@ -1,5 +1,5 @@
-import React, {useId} from 'react'
-import PropTypes, { number } from 'prop-types'
+import React from 'react'
+import PropTypes from 'prop-types'
 import CountryItem from './CountryItem'
 import useApi from './UseApi'
 
@@ -8,7 +8,6 @@ import './CountryList.css'
 function CountryList({ filters }) {
 
   const { countries } = useApi()
-  const id = useId();
   // eslint-disable-next-line react/prop-types
   const filterCoutries = countries.filter((country) => country.name.common.toLowerCase().includes(filters.toLowerCase()))
   console.log(filterCoutries)
