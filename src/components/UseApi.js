@@ -7,6 +7,7 @@ const useApi = () => {
 
   const BASE = `https://restcountries.com/v3.1/name/${NAME}`
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const getAllCountries = async () => {
     const result = await axios(`${BASE} `)
 
@@ -16,7 +17,7 @@ const useApi = () => {
 
   useEffect(() => {
     getAllCountries()
-  }, [])
+  }, [getAllCountries])
 
   return { countries }
 }
