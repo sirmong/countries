@@ -1,12 +1,11 @@
-import React from 'react';
+import React from 'react'
 
-const Header = () => {
-    return (
-        <div>
-            <h1>Список стран мира</h1>
+function Header() {
+  return (
+    <div>
+      <h1>Список стран мира</h1>
+    </div>
+  )
+}
 
-        </div>
-    );
-};
-
-export default Header;
+export default Header
