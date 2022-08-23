@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import CountryItem from './CountryItem'
-import useApi from './UseApi'
+import CountryItem from '../CountryItem/CountryItem'
+import useApi from '../hook/UseApi'
 
 import './CountryList.css'
 
@@ -14,20 +14,20 @@ function CountryList({ filters }) {
 
   const allContries = filters
     ? filterCoutries.map((key, index) => {
-        const languages = Object.keys(key.languages).map((item, index) => <div key={index}>{key.languages[item]}</div>)
-        return (
-          <CountryItem
-            flags={key.flags.svg}
-            country={key.name.common}
-            capital={key.capital}
-            population={key.population}
-            region={key.region}
-            languages={languages}
-            maps={key.maps.googleMaps}
-            key={index}
-          />
-        )
-      })
+      const languages = Object.keys(key.languages).map((item, index) => <div key={index}>{key.languages[item]}</div>)
+      return (
+        <CountryItem
+          flags={key.flags.svg}
+          country={key.name.common}
+          capital={key.capital}
+          population={key.population}
+          region={key.region}
+          languages={languages}
+          maps={key.maps.googleMaps}
+          key={index}
+        />
+      )
+    })
     : null
 
   console.log(allContries)
@@ -36,7 +36,7 @@ function CountryList({ filters }) {
 }
 
 CountryList.propTypes = {
-    filters: PropTypes.string.isRequired,
+  filters: PropTypes.string.isRequired,
 }
 
 export default CountryList

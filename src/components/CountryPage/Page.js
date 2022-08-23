@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import Header from './Header'
-import Input from './Input'
-import CountryList from './CountryList'
+import Header from '../Header/Header'
+import Input from '../CountryAddForm/Input'
+import CountryList from '../CountryList/CountryList'
 // import { Context } from './Context';
 import './Page.css'
 

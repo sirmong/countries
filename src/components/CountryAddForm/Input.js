@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import useApi from './UseApi'
+import useApi from '../hook/UseApi'
 
 import './Input.css'
 
@@ -45,15 +45,15 @@ function Input({ onChange, filters }) {
           {filter && isOpen
             // eslint-disable-next-line no-unused-vars
             ? filterCoutries.map((key, index) => (
-                  // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
-                  <li
-                    className="autocomplete-item"
-                    onClick={itemClickHandler}
-                    key={index}
-                  >
-                    {key.name.common}
-                  </li>
-                ))
+              // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
+              <li
+                className="autocomplete-item"
+                onClick={itemClickHandler}
+                key={index}
+              >
+                {key.name.common}
+              </li>
+            ))
             : null}
         </ul>
       </form>
@@ -62,8 +62,8 @@ function Input({ onChange, filters }) {
 }
 
 Input.propTypes = {
-    filters: PropTypes.string.isRequired,
-    onChange: PropTypes.func.isRequired
+  filters: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired
 }
 
 Input.defaultProp = {
