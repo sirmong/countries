@@ -1,8 +1,9 @@
+/* eslint-disable react/no-array-index-key */
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import useApi from '../hook/UseApi'
 
-import './Input.css'
+import './index.css'
 
 function Input({ onChange, filters }) {
   const { countries } = useApi()
@@ -14,7 +15,7 @@ function Input({ onChange, filters }) {
     e.preventDefault()
     setFilter(e.target.value)
     onChange(e.target.value)
-    console.log(e.target.value)
+
   }
 
   const [isOpen, setIsOpen] = useState(true)

@@ -1,16 +1,18 @@
+/* eslint-disable react/no-array-index-key */
+/* eslint-disable no-shadow */
 import React from 'react'
 import PropTypes from 'prop-types'
-import CountryItem from '../CountryItem/CountryItem'
+import CountryItem from '../CountryItem'
 import useApi from '../hook/UseApi'
 
-import './CountryList.css'
+import './index.css'
 
 function CountryList({ filters }) {
 
   const { countries } = useApi()
   // eslint-disable-next-line react/prop-types
   const filterCoutries = countries.filter((country) => country.name.common.toLowerCase().includes(filters.toLowerCase()))
-  console.log(filterCoutries)
+
 
   const allContries = filters
     ? filterCoutries.map((key, index) => {
@@ -30,7 +32,6 @@ function CountryList({ filters }) {
     })
     : null
 
-  console.log(allContries)
 
   return <div className="coutrylist">{allContries}</div>
 }
