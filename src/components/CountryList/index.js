@@ -3,7 +3,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import CountryItem from '../CountryItem'
-import useApi from '../hook/UseApi'
+import useApi from '../../hook/UseApi'
 
 import './index.css'
 
