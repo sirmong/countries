@@ -1,9 +1,11 @@
+/* eslint-disable no-shadow */
+/* eslint-disable react/function-component-definition */
 import React, { useState } from 'react'
-import Header from './Header'
-import Input from './Input'
-import CountryList from './CountryList'
+import Header from '../Header'
+import Input from '../CountryAddForm'
+import CountryList from '../CountryList'
 // import { Context } from './Context';
-import './Page.css'
+
 
 const Page = () => {
   const [filters, setFilters] = useState('')

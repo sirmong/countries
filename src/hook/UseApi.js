@@ -12,7 +12,7 @@ const useApi = () => {
     const result = await axios(`${BASE} `)
 
     setCoutries(result.data)
-    console.log(result.data)
+
   }
 
   useEffect(() => {

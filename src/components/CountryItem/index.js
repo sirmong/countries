@@ -1,6 +1,9 @@
+/* eslint-disable import/no-unresolved */
+/* eslint-disable react/forbid-prop-types */
+/* eslint-disable react/require-default-props */
 import React from 'react'
 import PropTypes from 'prop-types'
-import './CountryItem.css'
+import './index.css'
 
 function CountryItem({
     country,
@@ -42,6 +45,7 @@ function CountryItem({
 CountryItem.propTypes = {
     country: PropTypes.string.isRequired,
     flags: PropTypes.string.isRequired,
+    // eslint-disable-next-line react/forbid-prop-types
     capital: PropTypes.array,
     population: PropTypes.number.isRequired,
     region: PropTypes.string.isRequired,
