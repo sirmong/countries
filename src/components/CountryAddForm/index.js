@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable react/no-array-index-key */
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
@@ -8,7 +10,7 @@ import './index.css'
 function Input({ onChange, filters }) {
   const { countries } = useApi()
   const [filter, setFilter] = useState('')
-  // eslint-disable-next-line react/prop-types
+
   const filterCoutries = countries.filter((country) => country.name.common.toLowerCase().includes(filters.toLowerCase()))
 
   const onChangeCountry = (e) => {
@@ -44,9 +46,9 @@ function Input({ onChange, filters }) {
 
         <ul className="autocomplete" onChange={onChangeCountry}>
           {filter && isOpen
-            // eslint-disable-next-line no-unused-vars
+
             ? filterCoutries.map((key, index) => (
-              // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
+
               <li
                 className="autocomplete-item"
                 onClick={itemClickHandler}

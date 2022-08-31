@@ -1,23 +1,28 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+
+
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
 const useApi = () => {
-  const NAME = `a`
+
   const [countries, setCoutries] = useState([])
 
-  const BASE = `https://restcountries.com/v3.1/name/${NAME}`
+  const BASE = `https://restcountries.com/v3.1/all`
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const getAllCountries = async () => {
-    const result = await axios(`${BASE} `)
 
-    setCoutries(result.data)
 
-  }
 
   useEffect(() => {
+    const getAllCountries = async () => {
+      const result = await axios(`${BASE} `)
+
+      setCoutries(result.data)
+
+    }
     getAllCountries()
-  }, [getAllCountries])
+
+  }, [])
 
   return { countries }
 }

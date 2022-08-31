@@ -10,7 +10,7 @@ import './index.css'
 function CountryList({ filters }) {
 
   const { countries } = useApi()
-  // eslint-disable-next-line react/prop-types
+
   const filterCoutries = countries.filter((country) => country.name.common.toLowerCase().includes(filters.toLowerCase()))
 
 
