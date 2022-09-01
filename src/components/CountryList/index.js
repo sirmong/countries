@@ -15,7 +15,7 @@ function CountryList({ filters }) {
 
   const filterCoutries = countries.filter((country) => country.name.common.toLowerCase().includes(filters.toLowerCase()))
 
-  // const languages = Object.values(countries.languages).map((item, index) => <div >{item.languages}</div>)
+
   const allContries = filters
     ? filterCoutries.map((key, index) =>
 
@@ -26,7 +26,7 @@ function CountryList({ filters }) {
         capital={key.capital}
         population={key.population}
         region={key.region}
-        languages={Object.values(key.languages).map((item, index) => <div >{item}</div>)}
+        languages={Object.values(key.languages).map((item) => <div >{item}</div>)}
         maps={key.maps.googleMaps}
         key={index}
       />
