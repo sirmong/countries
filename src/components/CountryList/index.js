@@ -1,5 +1,7 @@
-/* eslint-disable react/no-array-index-key */
 /* eslint-disable no-shadow */
+/* eslint-disable react/no-unstable-nested-components */
+/* eslint-disable react/no-array-index-key */
+
 import React from 'react'
 import PropTypes from 'prop-types'
 import CountryItem from '../CountryItem'
@@ -13,24 +15,24 @@ function CountryList({ filters }) {
 
   const filterCoutries = countries.filter((country) => country.name.common.toLowerCase().includes(filters.toLowerCase()))
 
-
+  // const languages = Object.values(countries.languages).map((item, index) => <div >{item.languages}</div>)
   const allContries = filters
-    ? filterCoutries.map((key, index) => {
-      const languages = Object.keys(key.languages).map((item, index) => <div key={index}>{key.languages[item]}</div>)
-      return (
-        <CountryItem
-          flags={key.flags.svg}
-          country={key.name.common}
-          capital={key.capital}
-          population={key.population}
-          region={key.region}
-          languages={languages}
-          maps={key.maps.googleMaps}
-          key={index}
-        />
-      )
-    })
-    : null
+    ? filterCoutries.map((key, index) =>
+
+    (
+      <CountryItem
+        flags={key.flags.svg}
+        country={key.name.common}
+        capital={key.capital}
+        population={key.population}
+        region={key.region}
+        languages={Object.values(key.languages).map((item, index) => <div >{item}</div>)}
+        maps={key.maps.googleMaps}
+        key={index}
+      />
+    )
+    )
+    : ''
 
 
   return <div className="coutrylist">{allContries}</div>
