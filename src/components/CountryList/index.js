@@ -1,3 +1,7 @@
+/* eslint-disable no-use-before-define */
+/* eslint-disable no-unreachable */
+/* eslint-disable no-console */
+/* eslint-disable arrow-body-style */
 /* eslint-disable no-shadow */
 /* eslint-disable react/no-unstable-nested-components */
 /* eslint-disable react/no-array-index-key */
@@ -17,26 +21,27 @@ function CountryList({ filters }) {
 
 
   const allContries = filters
-    ? filterCoutries.map((key, index) =>
-
-    (
-      <CountryItem
-        flags={key.flags.svg}
-        country={key.name.common}
-        capital={key.capital}
-        population={key.population}
-        region={key.region}
-        languages={Object.values(key.languages).map((item) => <div >{item}</div>)}
-        maps={key.maps.googleMaps}
-        key={index}
-      />
-    )
-    )
-    : ''
+    ? filterCoutries.map((key, index) => {
 
 
+      return (
+        <CountryItem
+          flags={key.flags.svg}
+          country={key.name.common}
+          capital={key.capital}
+          population={key.population}
+          region={key.region}
+          languages={key.languages !== undefined ? Object.values(key.languages).map((item, index) => <div key={index}>{item}</div>) : 'no languages'}
+
+          maps={key.maps.googleMaps}
+          key={index}
+        />
+      )
+    })
+    : ' '
   return <div className="coutrylist">{allContries}</div>
 }
+
 
 CountryList.propTypes = {
   filters: PropTypes.string.isRequired,

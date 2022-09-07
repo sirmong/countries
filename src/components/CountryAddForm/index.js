@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-autofocus */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable react/no-array-index-key */
@@ -37,7 +38,7 @@ function Input({ onChange, filters }) {
       <form className="search-form">
         <input
           className="input"
-          type="text"
+          autoFocus type="text"
           placeholder="введите название...."
           onChange={onChangeCountry}
           onClick={inputClickHandler}
@@ -57,7 +58,7 @@ function Input({ onChange, filters }) {
                 {key.name.common}
               </li>
             ))
-            : null}
+            : ''}
         </ul>
       </form>
     </div>
