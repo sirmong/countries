@@ -1,8 +1,13 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-console */
 /* eslint-disable import/no-unresolved */
 /* eslint-disable react/forbid-prop-types */
 /* eslint-disable react/require-default-props */
 import React from 'react'
 import PropTypes from 'prop-types'
+
+
+
 import './index.css'
 
 function CountryItem({
@@ -37,6 +42,7 @@ function CountryItem({
                     </span>
                 </p>
                 <div>Язык: {languages}</div>
+
             </div>
         </div>
     )

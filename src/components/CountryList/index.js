@@ -1,5 +1,11 @@
-/* eslint-disable react/no-array-index-key */
+/* eslint-disable no-use-before-define */
+/* eslint-disable no-unreachable */
+/* eslint-disable no-console */
+/* eslint-disable arrow-body-style */
 /* eslint-disable no-shadow */
+/* eslint-disable react/no-unstable-nested-components */
+/* eslint-disable react/no-array-index-key */
+
 import React from 'react'
 import PropTypes from 'prop-types'
 import CountryItem from '../CountryItem'
@@ -16,7 +22,8 @@ function CountryList({ filters }) {
 
   const allContries = filters
     ? filterCoutries.map((key, index) => {
-      const languages = Object.keys(key.languages).map((item, index) => <div key={index}>{key.languages[item]}</div>)
+
+
       return (
         <CountryItem
           flags={key.flags.svg}
@@ -24,17 +31,17 @@ function CountryList({ filters }) {
           capital={key.capital}
           population={key.population}
           region={key.region}
-          languages={languages}
+          languages={key.languages !== undefined ? Object.values(key.languages).map((item, index) => <div key={index}>{item}</div>) : 'no languages'}
+
           maps={key.maps.googleMaps}
           key={index}
         />
       )
     })
-    : null
-
-
+    : ' '
   return <div className="coutrylist">{allContries}</div>
 }
+
 
 CountryList.propTypes = {
   filters: PropTypes.string.isRequired,
