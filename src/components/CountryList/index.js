@@ -1,9 +1,5 @@
-/* eslint-disable no-use-before-define */
-/* eslint-disable no-unreachable */
-/* eslint-disable no-console */
 /* eslint-disable arrow-body-style */
 /* eslint-disable no-shadow */
-/* eslint-disable react/no-unstable-nested-components */
 /* eslint-disable react/no-array-index-key */
 
 import React from 'react'
