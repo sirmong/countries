@@ -15,6 +15,7 @@
         "react-app"
     ],
     "overrides": [
+
     ],
     "parserOptions": {
         "ecmaVersion": "latest",
@@ -26,7 +27,16 @@
     ],
     "rules": {
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-        "jsx-quotes": [1, "prefer-double"]
+        "jsx-quotes": [1, "prefer-double"],
+        // "no-shadow": "off",
+        "no-shadow": [
+            "error",
+
+            {
+                "hoist": "all"
+            }
+        ],
+      "@typescript-eslint/no-shadow": ["off"]
     }
 }
 

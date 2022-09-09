@@ -1,16 +1,15 @@
-/* eslint-disable jsx-a11y/no-autofocus */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-/* eslint-disable react/no-array-index-key */
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
+import * as uuid from "uuid";
 import PropTypes from 'prop-types'
 import useApi from '../../hook/UseApi'
+
 
 import './index.css'
 
 function Input({ onChange, filters }) {
   const { countries } = useApi()
   const [filter, setFilter] = useState('')
+
 
   const filterCoutries = countries.filter((country) => country.name.common.toLowerCase().includes(filters.toLowerCase()))
 
@@ -33,12 +32,22 @@ function Input({ onChange, filters }) {
     setIsOpen(true)
   }
 
+  const inputElement = useRef(null);
+
+  useEffect(() => {
+    if (inputElement.current) {
+      inputElement.current.focus();
+    }
+  }, []);
+
+
   return (
     <div className="form">
       <form className="search-form">
         <input
           className="input"
-          autoFocus type="text"
+          ref={inputElement}
+          type="text"
           placeholder="введите название...."
           onChange={onChangeCountry}
           onClick={inputClickHandler}
@@ -48,12 +57,16 @@ function Input({ onChange, filters }) {
         <ul className="autocomplete" onChange={onChangeCountry}>
           {filter && isOpen
 
-            ? filterCoutries.map((key, index) => (
+            ? filterCoutries.map((key) => (
 
-              <li
+
+
+              <li role="treeitem"
                 className="autocomplete-item"
                 onClick={itemClickHandler}
-                key={index}
+                onKeyPress={itemClickHandler}
+                key={uuid.v4()}
+
               >
                 {key.name.common}
               </li>
