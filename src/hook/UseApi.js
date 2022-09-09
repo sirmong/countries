@@ -22,7 +22,7 @@ const useApi = () => {
     }
     getAllCountries()
 
-  }, [])
+  }, [BASE])
 
   return { countries }
 }

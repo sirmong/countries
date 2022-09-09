@@ -12,9 +12,9 @@ function Page() {
   const [filters, setFilters] = useState('')
 
 
-  // eslint-disable-next-line no-shadow
-  const onChangeCountry = (filters) => {
-    setFilters(filters)
+
+  const onChangeCountry = (filt) => {
+    setFilters(filt)
   }
 
 
