@@ -1,13 +1,5 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-console */
-/* eslint-disable import/no-unresolved */
-/* eslint-disable react/forbid-prop-types */
-/* eslint-disable react/require-default-props */
 import React from 'react'
 import PropTypes from 'prop-types'
-
-
-
 import './index.css'
 
 function CountryItem({
@@ -51,11 +43,11 @@ function CountryItem({
 CountryItem.propTypes = {
     country: PropTypes.string.isRequired,
     flags: PropTypes.string.isRequired,
-    // eslint-disable-next-line react/forbid-prop-types
-    capital: PropTypes.array,
+
+    capital: PropTypes.string.isRequired,
     population: PropTypes.number.isRequired,
     region: PropTypes.string.isRequired,
-    languages: PropTypes.array.isRequired,
+    languages: PropTypes.string.isRequired,
     maps: PropTypes.string.isRequired
 
 }
